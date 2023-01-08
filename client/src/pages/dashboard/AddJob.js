@@ -18,6 +18,7 @@ const AddJob = () => {
     handleChange,
     clearValues,
     createJob,
+    editJob,
   } = useAppContext();
 
   const handleSubmit = (e) => {
@@ -27,7 +28,7 @@ const AddJob = () => {
       return;
     }
     if (isEditing) {
-      // eventually editJob()
+      editJob();
       return;
     }
     createJob();
@@ -37,7 +38,6 @@ const AddJob = () => {
     const name = e.target.name;
     const value = e.target.value;
     handleChange({ name, value });
-    console.log(isEditing);
   };
   return (
     <Wrapper>
